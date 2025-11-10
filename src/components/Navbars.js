@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default function Navbars(props) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">{props.title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,17 @@ export default function Navbars(props) {
   );
 }
 Navbars.propTypes = {
-  title: PropTypes.string.isRequired,
-  listItem1: PropTypes.string.isRequired,
-  listItem2: PropTypes.string.isRequired
+  title: PropTypes.string,
+  listItem1: PropTypes.string,
+  listItem2: PropTypes.string
 };
-Navbars.defaultProps = {
-  title: "Set Title Here",
-  listItem1: "Set ListItem1 Here",
-  listItem2: "Set ListItem2 Here"
-};
+// Navbars.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   listItem1: PropTypes.string.isRequired,
+//   listItem2: PropTypes.string.isRequired
+// };
+// Navbars.defaultProps = {
+//   title: "Set Title Here",
+//   listItem1: "Set ListItem1 Here",
+//   listItem2: "Set ListItem2 Here"
+// };
