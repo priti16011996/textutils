@@ -16,6 +16,19 @@ export default function TextForm(props) {
         let lowerText = text.toLowerCase();
         setText(lowerText);
     }
+    const handleClearClick =()=>{
+        let ClearText = '';
+        setText(ClearText);
+    }
+    const handleDownloadClick = () => {
+        const element = document.createElement("a");
+        const file = new Blob([text], { type: "text/plain" });
+        element.href = URL.createObjectURL(file);
+        element.download = "myTextFile.txt";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    };
     const [text, setText] = useState("Enter Your Text Here")
     return (  
         <>
@@ -25,7 +38,9 @@ export default function TextForm(props) {
             <textarea className="form-control" id="Box" value={text} onChange={handleOnChange} rows="8"></textarea>
             </div>
             <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert To Upper Case</button>
-            <button className="btn btn-primary" onClick={handleLpClick}>Convert To Lower Case</button>
+            <button className="btn btn-primary mx-1" onClick={handleLpClick}>Convert To Lower Case</button>
+            <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear Text</button>
+            <button className="btn btn-primary mx-1" onClick={handleDownloadClick}>Download Text</button>
         </div>
         <div className="container my-3">
             <h2>Your Text Summary</h2>
